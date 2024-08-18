@@ -11,7 +11,7 @@ class ProductList implements IProductService {
             name: data.name,
             price: data.price,
             createdAt: currentDate,
-            upDateAt: currentDate,  
+            updatedAt: currentDate,  
         };
     this.productList.push(newProduct)
     this.currentId++;
@@ -26,7 +26,7 @@ class ProductList implements IProductService {
         return this.productList.find(product => product.id === id)
     }
 
-    upDateProduct(id: number, data: { name?: string; price?: number; }): IProduct {
+    updateProduct(id: number, data: { name?: string; price?: number; }): IProduct {
         const product = this.productList.find(product => product.id === id);
         if (!product) {
             throw new Error('Product not found');
